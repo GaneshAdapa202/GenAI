@@ -1,0 +1,6 @@
+research_task:
+  description: >
+    Research the latest breakthroughs in {topic} for {current_year}.
+  expected_output: >
+    A list of 5 key developments in {topic}.
+  agent: researcher

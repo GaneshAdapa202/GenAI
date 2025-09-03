@@ -1,0 +1,30 @@
+# === LangChain & LangGraph Core ===
+langchain
+langgraph
+langchain-community
+ 
+# === Google Gemini (LLM) Support ===
+langchain-google-genai==2.1.8
+google-genai==1.28.0
+ 
+# === Embeddings & Model Integration ===
+openai
+langchain-openai
+InstructorEmbedding
+langchain-huggingface
+tf-keras
+ 
+# === Streamlit UI ===
+streamlit
+ 
+# === Environment Utilities ===
+python-dotenv
+ 
+# === Search & Retrieval Tools ===
+duckduckgo-search
+wikipedia
+ 
+# === Vector Stores ===
+faiss-cpu
+chromadb
+langchain-chroma
