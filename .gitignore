@@ -1,0 +1,9 @@
+# Ignore environment files
+.env
+*.env
+.venv
+
+# Ignore node modules or build files (optional if React/Node)
+node_modules/
+dist/
+build/

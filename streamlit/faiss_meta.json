@@ -1,0 +1,82 @@
+[
+  {
+    "source": "What is Classification.pdf",
+    "text": "What is Classification?  \nClassification is a Supervised Machine Learning  technique used to predict categorical labels  \n(discrete classes or categories).  \n• Goal:  Classify input data into predefined categories.  \n• Examples:  \no Email → Spam or Not Spam  \no Disease Diagnosis → Positive or Negative  \no Student Marks → Pass or Fail  \n Types of Classification  \nType  Description  Example  \nBinary Classification  Only 2 classes  Spam vs Not Spam  \nMulticlass \nClassification  More than 2 classes  Predicting flower \nspecies  \nMultilabel \nClassification  Each input can belong to multiple \nlabels  Movie genre tagging  \n \n Classification Workflow"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "1. Import & Load Data"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "2. Data Preprocessing  (cleaning, encoding, scaling)"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "3. Train -Test Split"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "4. Model Selection  (e.g., Decision Tree, KNN)"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "5. Training"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "6. Prediction"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "7. Evaluation  (accuracy, confusion matrix, etc.)"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "1. Logistic Regression Description: • Used for binary classification  problems. • Predicts the probability  of an instance belonging to a class. • Uses sigmoid function  to map predicted values to [0,1]. Real -Life Example: Email Spam Detection • Features:  word frequency, presence of “free”, length of email • Target:  Spam (1) or Not Spam (0) Python Code: from sklearn.linear_model import LogisticRegression from sklearn.model_selection import train_test_split from sklearn.metrics import accuracy_score from sklearn.datasets import load_breast_cancer from sklearn.preprocessing import StandardScaler # Load data data = load_breast_cancer() X = data.data y = data.target # Scale the data scaler = StandardScaler() X_scaled = scaler.fit_transform(X) # Split data X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.3) # Train Logistic Regression model = LogisticRegression(max_iter=1000) model.fit(X_train, y_train) # Predict and evaluate y_pred = model.predict(X_test)"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "print(\"Accuracy:\", accuracy_score(y_test, y_pred)) Pros: • Fast and efficient • Works well for linearly separable data Cons: • Not suitable for complex or non -linear data 2. Decision Tree A decision tree is a supervised learning algorithm used for both classification and regression tasks. It has a hierarchical tree structure which consists of a root node, branches, internal nodes,  and leaf nodes. It It  works like a flowchart help to make decisions step by step where: • Internal nodes represent attribute tests • Branches represent attribute values • Leaf nodes represent final decisions or predictions. Description: • Splits data into branches using feature -based questions . • Ends at leaf nodes  with predicted class labels. • Can handle both numerical and categorical data. Real -Life Example: Loan Approval • Features:  income, credit score, age, employment status • Target:  Approve (Yes) or Not Approve (No) Python Code: from sklearn.tree import DecisionTreeClassifier"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "from sklearn.datasets import load_iris from sklearn.model_selection import train_test_split from sklearn.metrics import accuracy_score # Load dataset (multiclass classification) data = load_iris() X = data.data y = data.target # Split the data X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3) # Train Decision Tree model = DecisionTreeClassifier(max_depth=3) model.fit(X_train, y_train) # Predict and evaluate y_pred = model.predict(X_test) print(\"Accuracy:\", accuracy_score(y_test, y_pred)) Concepts: • Entropy & Information Gain : To decide which feature to split • Pruning : Prevents overfitting by removing extra branches Pros: • Easy to interpret & visualize • Handles both types of data Hyperparameters of Decision Tree These control the growth and structure  of the tree. Hyperparameter  Description max_depth  Maximum depth (levels) of the tree. Prevents overfitting. min_samples_split  Minimum number of samples required to split into  an internal node."
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "min_samples_leaf  Minimum number of samples required at a leaf node. criterion  Metrics are  used to evaluate the split (e.g., gini, entropy). max_features  Number of features to consider when looking for the best  split. Criterion Options: • gini: Default; measures impurity • entropy: Measures information gain Example usage: python CopyEdit DecisionTreeClassifier(criterion='entropy', max_depth=4) Cons: • Overfitting if not controlled 3. Random Forest Random Forest is a machine learning algorithm that uses many decision trees to make better predictions. Each tree looks at different random parts of the data,  and their results are combined by voting for classification or averaging  regression. This helps improve  accuracy and reduce  errors. Description: • Ensemble  of many Decision Trees • Uses Bagging : each tree gets random subset of data & features • Aggregates results via majority voting Real -Life Example: Customer Churn Prediction"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "• Features:  contract length, monthly charges, usage pattern • Target:  Churn (Yes/No) Python Code: from sklearn.ensemble import RandomForestClassifier from sklearn. datasets import load_wine from sklearn.model_selection import train_test_split from sklearn.metrics import accuracy_score # Load dataset data = load_wine() X = data.data y = data.target # Split the data X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3) # Train Random Forest model = RandomForestClassifier(n_estimators=100) model.fit(X_train, y_train) # Predict and evaluate y_pred = model.predict(X_test) print(\"Accuracy:\", accuracy_score(y_test, y_pred)) Key Features: • max_depth , n_estimators , max_features  are important hyperparameters • Out-of-Bag (OOB) Score  helps validate without extra test set Pros: • High accuracy • Reduces overfitting • Handles missing values Cons: • Slower than a single decision tree • Harder to interpret Comparison Table:"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "Feature  Logistic Regression  Decision Tree  Random Forest Output Type  Binary (0/1)  Binary or Multiclass  Binary or Multiclass Complexity  Low Medium  High Overfitting Risk  Low High (if unpruned)  Low Interpretability  High  Very High  Medium Speed  Fast Fast Slower (many trees) Non-linear Data  No Yes Yes Accuracy  Medium  Medium to High  High Support Vector Machine (SVM) Algorithm Support Vector Machine (SVM) is a supervised machine learning algorithm used for classification and regression tasks. It tries to find the best boundary, known as hyperplane, that separates different classes in the data. It is useful when you want to do bi nary classification like spam vs. not spam or cat vs. dog. The main goal of SVM is to maximize the margin between the two classes. The larger the margin  the better the model performs on new and unseen data. Key Concepts of Support Vector Machine • Hyperplane : A decision boundary separating different classes in feature space"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "and is represented by the equation wx + b = 0 in linear classification. • Support Vectors : The closest data points to the hyperplane, crucial for determining the hyperplane and margin in SVM. • Margin : The distance between the hyperplane and the support vectors. SVM aims to maximize this margin for better classification performance. • Kernel : A function that maps data to a higher -dimensional space enabling SVM to handle non -linearly separable data. • Hard Margin : A maximum -margin hyperplane that perfectly separates the data without misclassification. • Soft Margin : Allows some misclassifications by introducing slack variables, balancing margin maximization and misclassification penalties when data is not perfectly separable. • C: A regularization term balancing margin maximization and misclassification penalties. A higher C value forces stricter penalties for misclassifications. • Hinge Loss : A loss function penalizes misclassified points or margin violations"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "and is combined with regularization in SVM. • Dual Problem : Involves solving Lagrange multipliers associated with support vectors, facilitating the kernel trick and efficient computation. # Step 1: Import Libraries from  sklearn  import  datasets from  sklearn .model_selection  import  train_test_split from  sklearn .svm import  SVC from  sklearn .metrics  import  classification_report , accuracy_score import  matplotlib .pyplot  as plt import  seaborn  as sns # Step 2: Load the Iris Dataset iris = datasets .load_iris () X = iris.data            # features: sepal & petal length/width y = iris.target          # target: species # Step 3: Split into Training & Test sets X_train , X_test , y_train , y_test  = train_test_split (X, y, test_size =0.3, random_state =42) # Step 4: Create and Train the SVM Model model  = SVC(kernel ='linear' )  # You can also try: 'rbf', 'poly', 'sigmoid' model .fit(X_train , y_train ) # Step 5: Predict on Test Data y_pred  = model .predict (X_test )"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "# Step 6: Evaluate the Model print (\"Accuracy:\" , accuracy_score (y_test , y_pred )) print (\"Classification Report: \\n\", classification_report (y_test , y_pred )) What Are Transformers? Transformers  are a type of neural network architecture introduced in the paper “Attention is All You Need” (Vaswani et al., 2017) . They are designed to process sequential data , such as text, without using recurrence (RNNs) . They rely entirely on a mechanism called self-attention  to compute relationships between words. Transformer Architecture Components Input Text → Embedding → Encoder → Decoder → Output Text Let’s  now go step -by-step into Embedding , Encoding , and Decoding . 1. Embedding Layer What it is: An embedding  converts discrete tokens (like words) into continuous vectors  in a dense vector space. Why it's needed: Neural networks can’t  work directly with words or tokens  — they need numbers. Embeddings capture semantic meaning  (e.g., similar words have similar vectors). Example:"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "from  transformers  import  AutoTokenizer, AutoModel import  torch # Load pretrained tokenizer and model tokenizer  = AutoTokenizer.from_pretrained( \"bert -base -uncased\" ) model  = AutoModel.from_pretrained( \"bert -base -uncased\" ) # Input text text = \"Transformers are powerful\" inputs  = tokenizer (text, return_tensors =\"pt\") # Generate embeddings with  torch .no_grad (): outputs  = model (**inputs ) # Token -level embeddings embeddings  = outputs .last_hidden_state print (embeddings .shape)  # (batch_size, sequence_length, hidden_dim) What you get: • A vector for every token (e.g., \"transformers\", \"are\", \"powerful\") • Each vector is 768 -dimensional in BERT -base 2. Encoder What it is: The encoder  takes the input embeddings and produces contextualized representations  using multi -head self -attention . What it does: • Understands relationships between words • Captures context (e.g., “bank” in “river bank” vs “money bank”) Structure: • Multi -head self -attention"
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "• Layer normalization • Feed -forward neural network • Residual connections Example (Visualization): \"Transformers are powerful\" ↓        ↓      ↓ [768 -d] [768 -d] [768 -d] → → Encoder Block (×12 in BERT) Self-Attention: • Attention lets each word \"attend\" to all others. • Helps model long -range dependencies . 3. Decoder What it is: The decoder  takes the encoder’s output and generates output tokens , one by one — used in tasks like translation, summarization, generation . How it works: • Takes previous output (e.g., translated sentence so far) • Attends to encoder output • Predicts the next word Used in: • GPT (decoder -only) • BERT (encoder -only) • T5, BART (encoder -decoder) Example: Encoder -Decoder (T5) from  transformers  import  T5Tokenizer, T5ForConditionalGeneration tokenizer  = T5Tokenizer.from_pretrained( \"t5-small\" ) model  = T5ForConditionalGeneration.from_pretrained( \"t5-small\" ) input_text  = \"translate English to French: How are you?\""
+  },
+  {
+    "source": "What is Classification.pdf",
+    "text": "input_ids  = tokenizer (input_text , return_tensors =\"pt\").input_ids # Generate output output_ids  = model .generate( input_ids ) translated  = tokenizer .decode( output_ids [0], skip_special_tokens =True ) print (translated ) # Output: \"Comment ça va ?\" Transformers Variants Model  Type  Usage BERT  Encoder -only  Classification, QA, etc. GPT Decoder -only  Text generation T5 Encoder -Decoder  Translation, summarization BART  Encoder -Decoder  Text generation, correction Summary Table Stage  Purpose  Output Embedding  Convert tokens → vectors  Token -level vectors (768 -dim etc.) Encoder  Understand context & relationships  Contextual representations Decoder  Generate target sequence from encoder  Text output (e.g., translation)"
+  }
+]

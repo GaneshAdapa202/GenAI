@@ -1,0 +1,43 @@
+# === LangChain & LangGraph Core ===
+langchain
+langgraph
+langchain-community
+matplotlib
+# === Google Gemini (LLM) Support ===
+langchain-google-genai==2.1.8
+google-genai==1.28.0
+ 
+# === Embeddings & Model Integration ===
+openai
+langchain-openai
+InstructorEmbedding
+langchain-huggingface
+# tf-keras
+ 
+# # === Weights & Bias ===
+wandb
+ 
+# === Streamlit UI ===
+streamlit
+ 
+# # === Environment Utilities ===
+python-dotenv
+sentence-transformers
+ 
+# # === Search & Retrieval Tools ===
+duckduckgo-search
+wikipedia
+ 
+# # === Vector Stores ===
+faiss-cpu
+chromadb
+langchain-chroma
+ 
+ 
+# # === Others ====
+llama_index
+llama-index-embeddings-google-genai
+llama-index-vector-stores-faiss
+PyPDF2
+python-docx
+llama-index-core

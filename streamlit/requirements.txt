@@ -1,0 +1,10 @@
+streamlit
+pandas
+matplotlib
+faiss-cpu
+PyPDF2
+python-docx
+sentence-transformers
+google-generativeai
+llama_index
+python-dotenv

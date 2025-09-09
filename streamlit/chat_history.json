@@ -1,0 +1,6 @@
+[
+  {
+    "query": "what is classification",
+    "answer": "Classification is a Supervised Machine Learning technique used to predict categorical labels (discrete classes or categories).  The goal is to classify input data into predefined categories.  Examples include classifying email as spam or not spam, diagnosing a disease as positive or negative, and classifying student marks as pass or fail.  There are three types: Binary Classification (only two classes), Multiclass Classification (more than two classes), and Multilabel Classification (each input can belong to multiple labels).\n"
+  }
+]
