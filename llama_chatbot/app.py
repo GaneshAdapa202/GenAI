@@ -38,7 +38,7 @@ if st.sidebar.button("💾 Save Chat"):
         st.session_state.chats[chat_name] = st.session_state.messages.copy()
         st.session_state.current_chat = chat_name
         st.success(f"Chat saved as '{chat_name}'")
-        st.experimental_rerun()
+        st.rerun()
     else:
         st.sidebar.error("Please enter a chat name before saving.")
  

@@ -18,7 +18,10 @@ langchain-huggingface
 wandb
  
 # === Streamlit UI ===
-streamlit
+# streamlit
+
+# == Gradio UI ==
+gradio
  
 # # === Environment Utilities ===
 python-dotenv

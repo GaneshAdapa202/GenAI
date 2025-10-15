@@ -1,0 +1,15 @@
+crewai
+langchain-community
+langchain
+langchain-openai
+langgraph
+crewai[tools]
+ipywidgets
+litellm
+arize-phoenix 
+opentelemetry-sdk
+opentelemetry-exporter-otlp
+openinference-instrumentation-crewai
+langgraph
+langchain
+langchain-tavily

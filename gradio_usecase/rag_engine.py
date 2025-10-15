@@ -27,8 +27,7 @@ if not API_KEY:
  
 # Gemini models
 GEN_MODEL = os.getenv("GEN_MODEL", "gemini-2.5-flash-lite")
-EMBED_MODEL = os.getenv("EMBED_MODEL", "models/embedding-001")
- 
+EMBED_MODEL = os.getenv("EMBED_MODEL", "models/text-embedding-004") 
  
 class RAGEngine:
     def __init__(self):
